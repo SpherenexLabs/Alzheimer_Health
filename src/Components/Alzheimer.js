@@ -649,6 +649,86 @@ const Alzheimer = () => {
             </div>
           )}
         </div>
+
+        {/* Emergency Caretakers Contact Section */}
+        <div className="caretakers-section">
+          <h3 className="caretakers-title">👥 Emergency Caretakers Contact</h3>
+          <p className="caretakers-subtitle">In case of emergency, contact these designated caretakers immediately</p>
+          
+          <div className="caretakers-grid">
+            <div className="caretaker-card">
+              <div className="caretaker-header">
+                <div className="caretaker-avatar">M</div>
+                <div className="caretaker-info">
+                  <h4 className="caretaker-name">Monisha SN</h4>
+                  <span className="caretaker-role">Emergency Contact</span>
+                </div>
+              </div>
+              <div className="caretaker-contact">
+                <a href="tel:6363018700" className="contact-btn call-btn">
+                  <span className="contact-icon">📞</span>
+                  <span className="contact-number">6363018700</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="caretaker-card">
+              <div className="caretaker-header">
+                <div className="caretaker-avatar">A</div>
+                <div className="caretaker-info">
+                  <h4 className="caretaker-name">Arpitha</h4>
+                  <span className="caretaker-role">Emergency Contact</span>
+                </div>
+              </div>
+              <div className="caretaker-contact">
+                <a href="tel:7760956771" className="contact-btn call-btn">
+                  <span className="contact-icon">📞</span>
+                  <span className="contact-number">7760956771</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="caretaker-card">
+              <div className="caretaker-header">
+                <div className="caretaker-avatar">C</div>
+                <div className="caretaker-info">
+                  <h4 className="caretaker-name">Chandana</h4>
+                  <span className="caretaker-role">Emergency Contact</span>
+                </div>
+              </div>
+              <div className="caretaker-contact">
+                <a href="tel:7892739967" className="contact-btn call-btn">
+                  <span className="contact-icon">📞</span>
+                  <span className="contact-number">7892739967</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="caretaker-card">
+              <div className="caretaker-header">
+                <div className="caretaker-avatar">V</div>
+                <div className="caretaker-info">
+                  <h4 className="caretaker-name">Vinitha</h4>
+                  <span className="caretaker-role">Emergency Contact</span>
+                </div>
+              </div>
+              <div className="caretaker-contact">
+                <a href="tel:9591587455" className="contact-btn call-btn">
+                  <span className="contact-icon">📞</span>
+                  <span className="contact-number">9591587455</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="emergency-notice">
+            <div className="notice-icon">🚨</div>
+            <div className="notice-content">
+              <h4>Emergency Protocol</h4>
+              <p>If the patient is missing or in distress, call any of the emergency contacts immediately for quick response and assistance.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="cards-grid">
