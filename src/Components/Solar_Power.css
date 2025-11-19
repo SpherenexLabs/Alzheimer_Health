@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.solar-power-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.solar-header {
+  background: white;
+  padding: 25px 40px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #4CAF50;
+}
+
+.solar-header h1 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #e8f5e9;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4CAF50;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.active {
+  box-shadow: 0 0 10px #4CAF50;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Main Content */
+.solar-main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.solar-main h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.solar-main h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  border-radius: 2px;
+}
+
+/* Data Section */
+.data-section {
+  margin-bottom: 50px;
+}
+
+.solar-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.solar-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.solar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+  pointer-events: none;
+}
+
+.solar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.battery-card {
+  border-top-color: #4CAF50;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f8f4 100%);
+}
+
+.current-card {
+  border-top-color: #FF9800;
+  background: linear-gradient(135deg, #ffffff 0%, #fff8f0 100%);
+}
+
+.voltage-card {
+  border-top-color: #2196F3;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+}
+
+.wired-card {
+  border-top-color: #9C27B0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f0ff 100%);
+}
+
+.wired-voltage-card {
+  border-top-color: #673AB7;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%);
+}
+
+.wireless-card {
+  border-top-color: #E91E63;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f6 100%);
+}
+
+.wireless-voltage-card {
+  border-top-color: #F44336;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.card-header h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-value {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-value.status-value {
+  font-size: 1.8rem;
+}
+
+.card-subtitle {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.progress-bar {
+  margin-top: 15px;
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* Waveform Section */
+.waveform-section {
+  margin-bottom: 50px;
+}
+
+.waveform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+.waveform-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.waveform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.waveform-card h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.chart-wrapper {
+  height: 250px;
+  position: relative;
+}
+
+.battery-wave {
+  border-left: 4px solid #4CAF50;
+}
+
+.current-wave {
+  border-left: 4px solid #FF9800;
+}
+
+.voltage-wave {
+  border-left: 4px solid #2196F3;
+}
+
+.wired-wave {
+  border-left: 4px solid #9C27B0;
+}
+
+.wireless-wave {
+  border-left: 4px solid #E91E63;
+}
+
+/* Summary Section */
+.summary-section {
+  margin-bottom: 40px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.summary-label {
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.summary-value {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.summary-value.active {
+  color: #4CAF50;
+}
+
+.summary-value.inactive {
+  color: #f44336;
+}
+
+/* Footer */
+.solar-footer {
+  background: white;
+  color: #6c757d;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-top: 2px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .solar-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .solar-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .solar-main {
+    padding: 20px;
+  }
+
+  .solar-main h2 {
+    font-size: 1.5rem;
+  }
+
+  .solar-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .waveform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .card-value {
+    font-size: 2.2rem;
+  }
+
+  .chart-wrapper {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-card {
+    padding: 20px;
+  }
+
+  .waveform-card {
+    padding: 20px;
+  }
+
+  .card-value {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+}

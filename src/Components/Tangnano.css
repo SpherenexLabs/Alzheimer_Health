@@ -1,0 +1,354 @@
+.tangnano-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tangnano-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.tangnano-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-connected {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+.status-connected .status-dot {
+  background-color: #4caf50;
+}
+
+.status-error {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+  border: 2px solid #f44336;
+}
+
+.status-error .status-dot {
+  background-color: #f44336;
+}
+
+.status-connecting {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 2px solid #ffc107;
+}
+
+.status-connecting .status-dot {
+  background-color: #ffc107;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.last-update {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sensor-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sensor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.sensor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-content h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.card-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #667eea;
+  margin: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-label {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Specific card styles */
+.temperature-card::before {
+  background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+}
+
+.temperature-card .card-value {
+  color: #ff6b6b;
+}
+
+.humidity-card::before {
+  background: linear-gradient(90deg, #4ecdc4, #44a08d);
+}
+
+.humidity-card .card-value {
+  color: #4ecdc4;
+}
+
+.status-card.error::before {
+  background: linear-gradient(90deg, #f44336, #e53935);
+}
+
+.status-card.error .card-value {
+  color: #f44336;
+}
+
+.status-card.success::before {
+  background: linear-gradient(90deg, #4caf50, #45a049);
+}
+
+.status-card.success .card-value {
+  color: #4caf50;
+}
+
+.soil-card::before {
+  background: linear-gradient(90deg, #8bc34a, #689f38);
+}
+
+.soil-card .card-value {
+  color: #8bc34a;
+}
+
+.soil-status-card.dry::before {
+  background: linear-gradient(90deg, #ff9800, #f57c00);
+}
+
+.soil-status-card.dry .card-value {
+  color: #ff9800;
+}
+
+.soil-status-card.wet::before {
+  background: linear-gradient(90deg, #03a9f4, #0288d1);
+}
+
+.soil-status-card.wet .card-value {
+  color: #03a9f4;
+}
+
+.soil-status-card.normal::before {
+  background: linear-gradient(90deg, #4caf50, #45a049);
+}
+
+.soil-status-card.normal .card-value {
+  color: #4caf50;
+}
+
+.relay-card.relay-on::before {
+  background: linear-gradient(90deg, #4caf50, #45a049);
+}
+
+.relay-card.relay-on .card-value {
+  color: #4caf50;
+}
+
+.relay-card.relay-off::before {
+  background: linear-gradient(90deg, #9e9e9e, #757575);
+}
+
+.relay-card.relay-off .card-value {
+  color: #9e9e9e;
+}
+
+.ph-raw-card::before {
+  background: linear-gradient(90deg, #9c27b0, #7b1fa2);
+}
+
+.ph-raw-card .card-value {
+  color: #9c27b0;
+}
+
+.ph-card::before {
+  background: linear-gradient(90deg, #673ab7, #5e35b1);
+}
+
+.ph-card .card-value {
+  color: #673ab7;
+}
+
+/* Graphs Section */
+.graphs-section {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.graphs-title {
+  text-align: center;
+  color: #667eea;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+  background: white;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-left: 4px solid #667eea;
+  padding-left: 15px;
+}
+
+.tangnano-footer {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tangnano-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .card-value {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .graphs-section {
+    padding: 15px;
+  }
+
+  .graphs-title {
+    font-size: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 15px;
+  }
+
+  .chart-container h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .graphs-section {
+    padding: 20px;
+  }
+}
